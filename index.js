@@ -43,10 +43,10 @@ const puppeteer = require('puppeteer');
   await page.type("#data-print-book-primary-author-first-name","Hi I'M A FIRST NAME",{ delay: 120 });
   await page.type("#data-print-book-primary-author-last-name","Hi I'M A FIRST NAME",{ delay: 120 });
 
+// besion d aide
 
-
-
-  await page.type("#data-print-book-description", "Hi I'M A DESCRIPTION", {delay: 120});
+  await page.waitForSelector(".editor",{visible:true});
+  await page.type(".editor", "Hi I'M A DESCRIPTION", {delay: 120});
   await page.click("#non-public-domain", {delay: 25,});
   await page.type("#data-print-book-keywords-0", "HY I'M A SUBTITLE 1", {delay: randomInt(150, 250),});
   await page.type("#data-print-book-keywords-1", "HY I'M A SUBTITLE 2", {delay: randomInt(150, 250),});
